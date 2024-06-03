@@ -9,7 +9,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "deploy": "npm run build && gh-pages -d dist",
-    "fast": "git add . && git commit -m 'Auto-deploy' && git push && npm run deploy"
+    "fast": "./fast-deploy.sh"
   },
   "dependencies": {
     "react": "^18.2.0",
