@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './index.css';
 import Employee from './components/Employee';
 import FlexContainer from './components/FlexContainer';
+import { robImage } from './assets/images'; 
 
 function App() {
   const [count, setCount] = useState(0);
@@ -21,26 +22,21 @@ function App() {
             onChange={(e) => {
               console.log(e.target.value);
               setRole(e.target.value);
-              
             }}
           />
-          <FlexContainer >
-            <Employee name='Rob Dunn' role='Director' pay='£15,000.00' />
+          <div className='flex flex-wrap justify-center'>
+            <Employee name='Rob Dunn' role='Director' pay='£15,000.00' img={robImage} />
             <Employee name='Toby Dunn' role={role} />
-            <Employee name='Sarah Dunn' role='Chocolate Eater' pay='£50,000.00'/>
-            <Employee name='Alfie Dunn' role='Teddy Game Designer'/>
+            <Employee name='Sarah Dunn' role='Chocolate Eater' pay='£50p' />
+            <Employee name='Alfie Dunn' role='Teddy Game Designer' />
             <Employee name='Tootsie The Cat' role='Pet' pay='Freeloader' />
             <Employee />
-          </FlexContainer>
+          </div>
         </>
       ) : (
         <p>You cannot see the employees!</p>
       )}
-      <div className='card'>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
+
     </>
   );
 }
