@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import './App.css';
+import './index.css';
 import Employee from './components/Employee';
+import FlexContainer from './components/FlexContainer';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,16 +17,21 @@ function App() {
         <>
           <input
             type='text'
+            placeholder="Set Toby's Job"
             onChange={(e) => {
               console.log(e.target.value);
-              setRole(e.target.value)
+              setRole(e.target.value);
+              
             }}
           />
-          <Employee name='Rob Dunn' role='Director' pay='£15,000.00' />
-          <Employee name='Toby' role={role} />
-          <Employee name='Sarah' />
-          <Employee name='Alfie' />
-          <Employee name='Tootsie' />
+          <FlexContainer >
+            <Employee name='Rob Dunn' role='Director' pay='£15,000.00' />
+            <Employee name='Toby Dunn' role={role} />
+            <Employee name='Sarah Dunn' role='Chocolate Eater' pay='£50,000.00'/>
+            <Employee name='Alfie Dunn' role='Teddy Game Designer'/>
+            <Employee name='Tootsie The Cat' role='Pet' pay='Freeloader' />
+            <Employee />
+          </FlexContainer>
         </>
       ) : (
         <p>You cannot see the employees!</p>
