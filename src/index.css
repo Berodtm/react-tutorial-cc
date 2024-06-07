@@ -1,35 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-h1, h2, h3, input, button, p, body {
-    margin: 5px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-.employees {
-    display: flex;
-    flex-direction: column;
-    border: solid 1px grey;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 5px;
-    min-width: 300px;
-}
-.flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-}
-button {
-    padding: 10px 20px 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: gold;
-    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
-} */

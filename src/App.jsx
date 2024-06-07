@@ -2,11 +2,11 @@ import { useState } from 'react';
 import './index.css';
 import Employee from './components/Employee';
 import FlexContainer from './components/FlexContainer';
-import { robImage } from './assets/images'; 
+import { robImage, alfieImage, tobyImage, sarahImage, tootsieImage } from './assets/images'; 
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [role, setRole] = useState('Dev');
+  const [role, setRole] = useState('Strawberry Nose Lover');
+  const [employees, setEmployees] = useState();
   let showEmployees = true;
 
   return (
@@ -26,11 +26,12 @@ function App() {
           />
           <div className='flex flex-wrap justify-center'>
             <Employee name='Rob Dunn' role='Director' pay='£15,000.00' img={robImage} />
-            <Employee name='Toby Dunn' role={role} />
-            <Employee name='Sarah Dunn' role='Chocolate Eater' pay='£50p' />
-            <Employee name='Alfie Dunn' role='Teddy Game Designer' />
-            <Employee name='Tootsie The Cat' role='Pet' pay='Freeloader' />
+            <Employee name='Toby Dunn' role={role} pay='£500,000.00' img={tobyImage} />
+            <Employee name='Sarah Dunn' role='Chocolate Eater' pay='50p' img={sarahImage} />
+            <Employee name='Alfie Dunn' role='Strawberry Nose Killer' pay='£1,000.00' img={alfieImage}/>
+            <Employee name='Tootsie The Cat' role='Pet' pay='Freeloader' img={tootsieImage} />
             <Employee />
+   
           </div>
         </>
       ) : (
