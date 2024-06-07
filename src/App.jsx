@@ -4,45 +4,23 @@ import Employee from './components/Employee';
 import FlexContainer from './components/FlexContainer';
 import { robImage, sarahImage, tootsieImage } from './assets/images';
 import { v4 as uuidv4 } from 'uuid';
+import employeeData from './data/employees';
 
 function App() {
-  const [role, setRole] = useState('Strawberry Nose Lover');
-  const [employees, setEmployees] = useState([
-    { 
-      id: 1,
-      name: 'Rob Dunn',
-      role: 'Director',
-      pay: '£15,000.00',
-      img: robImage,
-    },
-    {
-      id: 2,
-      name: 'Sarah Dunn',
-      role: 'Chocolate Eater',
-      pay: '50p',
-      img: sarahImage,
-    },
-    {
-      id: 3,
-      name: 'Alfie Dunn',
-      role: 'Strawberry Nose Killer',
-      pay: '£1,000.00',
-    },
-    {
-      id: 4,
-      name: 'Tootsie The Cat',
-      role: 'Pet',
-      pay: 'Freeloader',
-      img: tootsieImage,
-    },
-    { 
-      id: 5,
-      name: 'Toby Dunn',
-      role: 'Strawberry Nose Lover',
-      pay: '£500,000.00',
-    },
-  ]);
+  const [role, setRole] = useState('');
+  const [employees, setEmployees] = useState(employeeData);
   let showEmployees = true;
+
+  const handleRoleChange = (e) => {
+    setRole(e.target.value);
+    const updatedEmployees = employees.map((employee) => {
+      if (employee.name === 'Toby Dunn') {
+        return { ...employee, role: e.target.value };
+      }
+      return employee;
+    });
+    setEmployees(updatedEmployees);
+  }
 
   return (
     <>
@@ -54,10 +32,7 @@ function App() {
           <input
             type='text'
             placeholder="Set Toby's Job"
-            onChange={(e) => {
-              console.log(e.target.value);
-              setRole(e.target.value);
-            }}
+            onChange={handleRoleChange}
           />
           <div className='flex flex-wrap justify-center'>
             {employees.map((employee) => {
@@ -72,6 +47,7 @@ function App() {
                 />
               );
             })}
+            <Employee />
           </div>
         </>
       ) : (
