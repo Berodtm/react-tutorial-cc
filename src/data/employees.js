@@ -18,7 +18,7 @@ const employeeData = [
     id: 3,
     name: 'Alfie Dunn',
     role: 'Strawberry Nose Killer',
-    pay: '£999.99',
+    pay: '£9999.99',
   },
   {
     id: 4,
