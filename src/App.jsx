@@ -20,8 +20,17 @@ function App() {
       return employee;
     });
     setEmployees(updatedEmployees);
+  };
+  function updateEmployee(id, newName, newRole, newPay) {
+    console.log('updateEmployee inside of the app.jsx');
+    const updatedEmployees = employees.map((employee) => {
+      if (id == employee.id) {
+        return { ...employee, name: newName, role: newRole, pay: newPay };
+      }
+      return employee;
+    });
+    setEmployees(updatedEmployees);
   }
-
   return (
     <>
       <h1>React Tutorial</h1>
@@ -36,14 +45,15 @@ function App() {
           />
           <div className='flex flex-wrap justify-center'>
             {employees.map((employee) => {
-              console.log(employee, uuidv4());
               return (
                 <Employee
-                  key={uuidv4()}
+                  key={employee.id}
+                  id={employee.id}
                   name={employee.name}
                   role={employee.role}
                   pay={employee.pay}
                   img={employee.img}
+                  updateEmployee={updateEmployee}
                 />
               );
             })}
