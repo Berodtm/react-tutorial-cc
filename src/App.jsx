@@ -11,16 +11,7 @@ function App() {
   const [employees, setEmployees] = useState(employeeData);
   let showEmployees = true;
 
-  const handleRoleChange = (e) => {
-    setRole(e.target.value);
-    const updatedEmployees = employees.map((employee) => {
-      if (employee.name === 'Toby Dunn') {
-        return { ...employee, role: e.target.value };
-      }
-      return employee;
-    });
-    setEmployees(updatedEmployees);
-  };
+  
   function updateEmployee(id, newName, newRole, newPay) {
     console.log('updateEmployee inside of the app.jsx');
     const updatedEmployees = employees.map((employee) => {
@@ -33,16 +24,12 @@ function App() {
   }
   return (
     <>
-      <h1>React Tutorial</h1>
-      <h2>List of Employees</h2>
+      <h1 className='text-center'>React Tutorial</h1>
+      <h2 className='text-center'>List of Employees</h2>
 
       {showEmployees ? (
         <>
-          <input
-            type='text'
-            placeholder="Set Toby's Job"
-            onChange={handleRoleChange}
-          />
+          
           <div className='flex flex-wrap justify-center'>
             {employees.map((employee) => {
               return (
