@@ -5,6 +5,7 @@ import FlexContainer from './components/FlexContainer';
 import { robImage, sarahImage, tootsieImage } from './assets/images';
 import { v4 as uuidv4 } from 'uuid';
 import employeeData from './data/employees';
+import AddEmployee from './components/AddEmployee';
 
 function App() {
   const [role, setRole] = useState('');
@@ -22,6 +23,19 @@ function App() {
     });
     setEmployees(updatedEmployees);
   }
+
+  function newEmployee(name, role, pay, img) {
+    const newEmployee = {
+      id: uuidv4(),
+      name: name,
+      role: role,
+      pay: pay,
+      img: img,
+    
+    }
+    setEmployees([...employees, newEmployee])
+  }
+
   return (
     <>
       <h1 className='text-center'>React Tutorial</h1>
@@ -44,8 +58,10 @@ function App() {
                 />
               );
             })}
-            <Employee />
+            {/* <Employee /> */}
+            
           </div>
+          <AddEmployee newEmployee={newEmployee} />
         </>
       ) : (
         <p>You cannot see the employees!</p>
