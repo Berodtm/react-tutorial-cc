@@ -1,20 +1,16 @@
 import { useState } from 'react';
 import './index.css';
 import Employee from './components/Employee';
-import FlexContainer from './components/FlexContainer';
-import { robImage, sarahImage, tootsieImage } from './assets/images';
 import { v4 as uuidv4 } from 'uuid';
 import employeeData from './data/employees';
 import AddEmployee from './components/AddEmployee';
 
 function App() {
-  const [role, setRole] = useState('');
   const [employees, setEmployees] = useState(employeeData);
   let showEmployees = true;
 
-  
   function updateEmployee(id, newName, newRole, newPay) {
-    console.log('updateEmployee inside of the app.jsx');
+    console.log('Debugging: updateEmployee inside of the app.jsx');
     const updatedEmployees = employees.map((employee) => {
       if (id == employee.id) {
         return { ...employee, name: newName, role: newRole, pay: newPay };
@@ -31,9 +27,8 @@ function App() {
       role: role,
       pay: pay,
       img: img,
-    
-    }
-    setEmployees([...employees, newEmployee])
+    };
+    setEmployees([...employees, newEmployee]);
   }
 
   return (
@@ -43,7 +38,6 @@ function App() {
 
       {showEmployees ? (
         <>
-          
           <div className='flex flex-wrap justify-center'>
             {employees.map((employee) => {
               return (
@@ -59,7 +53,6 @@ function App() {
               );
             })}
             {/* <Employee /> */}
-            
           </div>
           <AddEmployee newEmployee={newEmployee} />
         </>

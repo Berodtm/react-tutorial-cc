@@ -1,15 +1,11 @@
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 function AddEmployee(props) {
   const [name, setName] = useState('');
   const [role, setRole] = useState('');
-
   const [pay, setPay] = useState('');
-
   const [img, setImg] = useState('');
-
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -41,8 +37,8 @@ function AddEmployee(props) {
               setRole('');
               setPay('');
               setImg('');
-              console.log('Hello from Add Employee');
-              console.log(name, role, pay, img);
+              console.log('Debugging: Hello from Add Employee');
+              console.log('Debugging:', name, role, pay, img);
               props.newEmployee(name, role, pay, img);
             }}
             id='editmodal'

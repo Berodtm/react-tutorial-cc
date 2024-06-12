@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 function EditEmployee(props) {
@@ -35,8 +34,8 @@ function EditEmployee(props) {
             onSubmit={(e) => {
               handleClose()
               e.preventDefault();
-              console.log('Hello from edit Employee');
-              console.log(props.id, name, role, pay);
+              console.log('Debugging: Hello from edit Employee');
+              console.log('Debugging:', props.id, name, role, pay);
               props.updateEmployee(props.id, name, role, pay);
             }}
             id='editmodal'
