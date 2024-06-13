@@ -24,14 +24,7 @@ function Employee(props) {
             {props.pay ? props.pay : '£10,000.00'}
           </p>
         </div>
-        <EditEmployee
-          id={props.id}
-          name={props.name}
-          role={props.role}
-          pay={props.pay}
-          img={props.img}
-          updateEmployee={props.updateEmployee}
-        />
+        {props.editEmployee}
       </div>
     </div>
   );

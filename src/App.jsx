@@ -4,6 +4,7 @@ import Employee from './components/Employee';
 import { v4 as uuidv4 } from 'uuid';
 import employeeData from './data/employees';
 import AddEmployee from './components/AddEmployee';
+import EditEmployee from './components/EditEmployee';
 
 function App() {
   const [employees, setEmployees] = useState(employeeData);
@@ -13,7 +14,13 @@ function App() {
     console.log('Debugging: updateEmployee inside of the app.jsx');
     const updatedEmployees = employees.map((employee) => {
       if (id == employee.id) {
-        return { ...employee, name: newName, role: newRole, pay: newPay, img: newImg };
+        return {
+          ...employee,
+          name: newName,
+          role: newRole,
+          pay: newPay,
+          img: newImg,
+        };
       }
       return employee;
     });
@@ -26,7 +33,7 @@ function App() {
       name: name,
       role: role,
       pay: pay,
-      img: img
+      img: img,
     };
     setEmployees([...employees, newEmployee]);
   }
@@ -40,6 +47,16 @@ function App() {
         <>
           <div className='flex flex-wrap justify-center'>
             {employees.map((employee) => {
+              const editEmployee = (
+                <EditEmployee
+                  id={employee.id}
+                  name={employee.name}
+                  role={employee.role}
+                  pay={employee.pay}
+                  img={employee.img}
+                  updateEmployee={updateEmployee}
+                />
+              );
               return (
                 <Employee
                   key={employee.id}
@@ -48,7 +65,7 @@ function App() {
                   role={employee.role}
                   pay={employee.pay}
                   img={employee.img}
-                  updateEmployee={updateEmployee}
+                  editEmployee={editEmployee}
                 />
               );
             })}
