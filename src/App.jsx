@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import employeeData from './data/employees';
 import AddEmployee from './components/AddEmployee';
 import EditEmployee from './components/EditEmployee';
+import Header from './components/header';
 
 function App() {
   const [employees, setEmployees] = useState(employeeData);
@@ -39,13 +40,13 @@ function App() {
   }
 
   return (
-    <>
-      <h1 className='text-center'>React Tutorial</h1>
-      <h2 className='text-center'>List of Employees</h2>
+    <div className='App bg-purple-50 min-h-screen'>
+      <Header />
+
 
       {showEmployees ? (
         <>
-          <div className='flex flex-wrap justify-center'>
+          <div className='flex flex-wrap justify-center my-2'>
             {employees.map((employee) => {
               const editEmployee = (
                 <EditEmployee
@@ -76,7 +77,7 @@ function App() {
       ) : (
         <p>You cannot see the employees!</p>
       )}
-    </>
+    </div>
   );
 }
 
