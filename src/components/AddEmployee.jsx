@@ -51,7 +51,7 @@ function AddEmployee(props) {
                   className='block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4'
                   htmlFor='name'
                 >
-                  Full Name
+                  Name
                 </label>
               </div>
               <div className='md:w-2/3'>
@@ -74,7 +74,7 @@ function AddEmployee(props) {
                   className='block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4'
                   htmlFor='role'
                 >
-                  role
+                  Role
                 </label>
               </div>
               <div className='md:w-2/3'>
@@ -97,7 +97,7 @@ function AddEmployee(props) {
                   className='block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4'
                   htmlFor='pay'
                 >
-                  pay
+                  Pay
                 </label>
               </div>
               <div className='md:w-2/3'>
@@ -120,7 +120,7 @@ function AddEmployee(props) {
                   className='block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4'
                   htmlFor='img'
                 >
-                  Image URL
+                  Image
                 </label>
               </div>
               <div className='md:w-2/3'>
