@@ -9,11 +9,11 @@ function App() {
   const [employees, setEmployees] = useState(employeeData);
   let showEmployees = true;
 
-  function updateEmployee(id, newName, newRole, newPay) {
+  function updateEmployee(id, newName, newRole, newPay, newImg) {
     console.log('Debugging: updateEmployee inside of the app.jsx');
     const updatedEmployees = employees.map((employee) => {
       if (id == employee.id) {
-        return { ...employee, name: newName, role: newRole, pay: newPay };
+        return { ...employee, name: newName, role: newRole, pay: newPay, img: newImg };
       }
       return employee;
     });
@@ -26,7 +26,7 @@ function App() {
       name: name,
       role: role,
       pay: pay,
-      img: img,
+      img: img
     };
     setEmployees([...employees, newEmployee]);
   }

@@ -29,6 +29,7 @@ function Employee(props) {
           name={props.name}
           role={props.role}
           pay={props.pay}
+          img={props.img}
           updateEmployee={props.updateEmployee}
         />
       </div>
