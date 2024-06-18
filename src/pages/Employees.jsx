@@ -6,7 +6,6 @@ import employeeData from '../data/employees';
 import AddEmployee from '../components/AddEmployee';
 import EditEmployee from '../components/EditEmployee';
 
-
 function Employees() {
   const [employees, setEmployees] = useState(employeeData);
   let showEmployees = true;
@@ -40,13 +39,10 @@ function Employees() {
   }
 
   return (
-    <div className='App bg-purple-50 min-h-screen'>
-      
-
-
+    <div>
       {showEmployees ? (
         <>
-          <div className='flex flex-wrap justify-center my-2'>
+          <div className='flex flex-wrap justify-center'>
             {employees.map((employee) => {
               const editEmployee = (
                 <EditEmployee

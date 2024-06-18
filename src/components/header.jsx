@@ -12,10 +12,10 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { NavLink } from 'react-router-dom';
 
 const navigation = [
-  { name: 'Employees', href: '/Employees' },
-  { name: 'Customers', href: '/Customers' },
-  { name: 'Projects', href: '/Other' },
-  { name: 'Calendar', href: '/Other2' },
+  { name: 'Employees', href: '/react-tutorial-cc/Employees' },
+  { name: 'Customers', href: '/react-tutorial-cc/Customers' },
+  { name: 'Projects', href: '/react-tutorial-cc/Other' },
+  { name: 'Calendar', href: '/react-tutorial-cc/Other2' },
 ];
 
 function classNames(...classes) {
@@ -80,27 +80,31 @@ export default function Header(props) {
             <DisclosurePanel className='sm:hidden'>
               <div className='space-y-1 px-2 pb-3 pt-2'>
                 {navigation.map((item) => (
-                  <DisclosureButton
+                  <NavLink
                     key={item.name}
-                    as='a'
-                    href={item.href}
-                    className={classNames(
-                      item.current
-                        ? 'bg-gray-900 text-white'
-                        : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                      'block rounded-md px-3 py-2 text-base font-medium'
-                    )}
-                    aria-current={item.current ? 'page' : undefined}
+                    to={item.href}
+                    className={({ isActive }) => {
+                      return (
+                        'block px-3 py-2 rounded-md text-base font-medium no-underline' +
+                        (isActive
+                          ? ' bg-gray-900 text-white'
+                          : ' text-gray-300 hover:bg-gray-700 hover:text-white')
+                      );
+                    }}
                   >
                     {item.name}
-                  </DisclosureButton>
+                  </NavLink>
                 ))}
               </div>
             </DisclosurePanel>
           </>
         )}
       </Disclosure>
-      {props.children}
+      <div className='bg-purple-50'>
+        <div className='max-w-7xl mx-auto min-h-screen p-2'>
+          {props.children}{' '}
+        </div>
+      </div>
     </>
   );
 }

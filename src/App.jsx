@@ -6,13 +6,13 @@ import Customers from './pages/Customers';
 
 function App() {
   return (
-    <BrowserRouter basename='/react-tutorial-cc/'>
+    <BrowserRouter >
       {/* I had to add basename in to make it work as I changed it to make it work in GH pages */}
       <Header>
         <Routes>
           <Route path='/' element={<Employees />} />
-          <Route path='/employees' element={<Employees />} />
-          <Route path='/customers' element={<Customers />} />
+          <Route path='/react-tutorial-cc/employees' element={<Employees />} />
+          <Route path='/react-tutorial-cc/customers' element={<Customers />} />
           <Route path='*' element={<Employees />} /> {/* Catch-all route */}
         </Routes>
       </Header>
