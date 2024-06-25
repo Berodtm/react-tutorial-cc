@@ -14,7 +14,7 @@ import { NavLink } from 'react-router-dom';
 const navigation = [
   { name: 'Employees', href: '/react-tutorial-cc/Employees' },
   { name: 'Customers', href: '/react-tutorial-cc/Customers' },
-  { name: 'Projects', href: '/react-tutorial-cc/Other' },
+  { name: 'Dictionary', href: '/react-tutorial-cc/dictionary' },
   { name: 'Calendar', href: '/react-tutorial-cc/Other2' },
 ];
 

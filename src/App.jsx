@@ -3,6 +3,7 @@ import Employees from './pages/Employees';
 import Header from './components/header';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Customers from './pages/Customers';
+import Dictionary from './components/Dictionary';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path='/' element={<Employees />} />
           <Route path='/react-tutorial-cc/employees' element={<Employees />} />
           <Route path='/react-tutorial-cc/customers' element={<Customers />} />
+          <Route path='/react-tutorial-cc/dictionary' element={<Dictionary />} />
           <Route path='*' element={<Employees />} /> {/* Catch-all route */}
         </Routes>
       </Header>
